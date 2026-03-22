@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schönberg und Zimmer – Fachanwälte für Migrationsrecht und Strafrecht Berlin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --dark:   #1a3a5c;
+    --darker: #102848;
+    --slate:  #1f4570;
+    --gold:   #2e7dd4;
+    --paper:  #ffffff;
+    --cream:  #e8f1fb;
+    --muted:  #4a6a8a;
+    --border: rgba(46,125,212,0.25);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--dark); overflow-x: hidden; }
+  a[href^="tel"], a[href^="mailto"] { color: inherit; text-decoration: none; -webkit-text-decoration: none; }
+
+  .banner { background: var(--darker); border-bottom: 1px solid var(--border); padding: .85rem 5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .8rem; }
+  .banner-left { display: flex; align-items: center; gap: .6rem; font-size: .82rem; color: rgba(255,255,255,.6); letter-spacing: .05em; }
+  .banner-right { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .banner-link { display: flex; align-items: center; gap: .55rem; text-decoration: none; color: #fff; font-weight: 600; font-size: .88rem; transition: opacity .2s; -webkit-text-decoration: none; }
+  .banner-link:hover { opacity: .7; }
+  .banner-link[href^="tel"], .banner-link[href^="mailto"] { color: #fff; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: var(--dark); padding: 0 5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,.08); transition: box-shadow .3s; }
+  .nav-logo { padding: 1.4rem 0; text-decoration: none; }
+  .nav-logo-main { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #fff; letter-spacing: .04em; }
+  .nav-logo-main span { color: #90c8ff; }
+  .nav-logo-sub { font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.3); font-weight: 400; display: block; margin-top: .15rem; }
+  .nav-links { display: flex; list-style: none; }
+  .nav-links li a { display: block; padding: 1.4rem 1.1rem; font-size: .78rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; position: relative; }
+  .nav-links li a::after { content: ''; position: absolute; bottom: 0; left: 1.1rem; right: 1.1rem; height: 2px; background: #90c8ff; transform: scaleX(0); transform-origin: center; transition: transform .3s; }
+  .nav-links li a:hover { color: #fff; }
+  .nav-links li a:hover::after { transform: scaleX(1); }
+  .nav-cta a { color: #90c8ff !important; }
+
+  .hero { background: var(--dark); min-height: 88vh; display: grid; grid-template-columns: 55% 45%; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; top: 0; right: 44%; bottom: 0; width: 80px; background: linear-gradient(to right, var(--dark), transparent); z-index: 3; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; position: relative; z-index: 4; }
+  .hero-eyebrow { display: flex; align-items: center; gap: .8rem; margin-bottom: 2.5rem; }
+  .eyebrow-line { width: 32px; height: 1px; background: #90c8ff; }
+  .eyebrow-text { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: #90c8ff; font-weight: 500; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5.2vw, 5.2rem); font-weight: 600; line-height: 1.05; color: #fff; margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: italic; color: #90c8ff; }
+  .hero-divider { width: 48px; height: 1.5px; background: linear-gradient(to right, #90c8ff, transparent); margin-bottom: 1.8rem; }
+  .hero-desc { font-size: 1rem; color: rgba(255,255,255,.55); line-height: 1.85; max-width: 480px; font-weight: 300; margin-bottom: 3rem; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 3.5rem; }
+  .tag { padding: .4rem 1rem; border: 1px solid rgba(144,200,255,.35); font-size: .76rem; color: rgba(144,200,255,.9); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: .6rem; background: #2e7dd4; color: #fff; padding: .9rem 2rem; font-size: .85rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: opacity .2s, transform .2s; font-family: 'DM Sans', sans-serif; }
+  .btn-primary:hover { opacity: .85; transform: translateY(-1px); }
+  .btn-outline { display: inline-flex; align-items: center; gap: .6rem; background: transparent; color: rgba(255,255,255,.7); padding: .9rem 2rem; font-size: .85rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,.25); cursor: pointer; transition: border-color .2s, color .2s, transform .2s; }
+  .btn-outline:hover { border-color: #90c8ff; color: #90c8ff; transform: translateY(-1px); }
+
+  .hero-right { position: relative; overflow: hidden; background: var(--slate); }
+  .hero-img-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #102848 0%, #1f4570 50%, #102848 100%); display: flex; align-items: center; justify-content: center; min-height: 400px; }
+  .hero-pattern-overlay { position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, rgba(144,200,255,.05) 0, rgba(144,200,255,.05) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, rgba(144,200,255,.05) 0, rgba(144,200,255,.05) 1px, transparent 1px, transparent 60px); }
+  .hero-stats { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(16,40,72,.9); backdrop-filter: blur(10px); display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(144,200,255,.15); z-index: 5; }
+  .hero-stat { padding: 1.5rem 2rem; border-right: 1px solid rgba(144,200,255,.1); }
+  .hero-stat:last-child { border-right: none; }
+  .hs-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: #90c8ff; display: block; }
+  .hs-label { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); font-weight: 500; margin-top: .2rem; }
+
+  .areas { padding: 7rem 5rem; background: var(--paper); }
+  .section-header { margin-bottom: 4rem; }
+  .s-tag { display: flex; align-items: center; gap: .7rem; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: .8rem; }
+  .s-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  .s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; color: var(--dark); line-height: 1.1; }
+  .s-title-w { color: #fff; }
+  .s-sub { font-size: .98rem; color: var(--muted); font-weight: 300; line-height: 1.7; max-width: 540px; margin-top: .8rem; }
+  .s-sub-w { color: rgba(255,255,255,.45); }
+
+  .areas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(0,0,0,.07); border: 1px solid rgba(0,0,0,.07); }
+  .area-card { background: var(--paper); padding: 2.5rem 2rem; transition: background .25s; position: relative; overflow: hidden; }
+  .area-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+  .area-card:hover { background: #f0f7ff; }
+  .area-card:hover::after { transform: scaleX(1); }
+  .ac-icon { width: 40px; height: 40px; margin-bottom: 1.5rem; }
+  .ac-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--dark); margin-bottom: .8rem; }
+  .ac-list { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+  .ac-list li { font-size: .83rem; color: var(--muted); line-height: 1.55; font-weight: 300; display: flex; align-items: flex-start; gap: .5rem; }
+  .ac-list li::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: .45rem; }
+
+  .team { background: var(--dark); padding: 7rem 5rem; }
+  .team-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); margin-top: 4rem; }
+  .team-card { background: var(--dark); transition: background .3s; }
+  .team-card:hover { background: #1f4570; }
+  .team-photo-placeholder { width: 100%; aspect-ratio: 3/2.8; background: linear-gradient(160deg, #102848, #1f4570); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .team-photo-placeholder::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(144,200,255,.04) 0, rgba(144,200,255,.04) 1px, transparent 1px, transparent 20px); }
+  .placeholder-icon { width: 60px; height: 60px; opacity: .18; }
+  .photo-hint { position: absolute; inset: 0; background: rgba(46,125,212,.1); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .3s; font-size: .75rem; color: #90c8ff; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; }
+  .team-photo-placeholder:hover .photo-hint { opacity: 1; }
+  .team-info { padding: 2rem 2.2rem; border-top: 1px solid rgba(255,255,255,.07); }
+  .team-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #fff; margin-bottom: .3rem; }
+  .team-role { font-size: .8rem; color: #90c8ff; letter-spacing: .06em; margin-bottom: .8rem; }
+  .team-spec { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.6; font-weight: 300; }
+  .team-spec span { display: block; margin-bottom: .25rem; }
+
+  .kanzlei { background: var(--cream); padding: 7rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .kanzlei-desc { font-size: .98rem; color: var(--muted); line-height: 1.85; font-weight: 300; margin: 1.5rem 0 2rem; }
+  .kanzlei-punkte { display: flex; flex-direction: column; gap: 1rem; }
+  .kanzlei-punkt { display: flex; align-items: flex-start; gap: 1rem; padding: 1.2rem 1.5rem; background: #fff; border-left: 3px solid var(--gold); }
+  .k-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: .35rem; }
+  .k-text { font-size: .92rem; color: var(--dark); line-height: 1.6; }
+  .k-text strong { font-weight: 600; display: block; margin-bottom: .2rem; }
+
+  .zeiten-box { background: var(--dark); padding: 3rem; position: relative; overflow: hidden; }
+  .zeiten-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, #90c8ff, transparent); }
+  .zb-label { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: #90c8ff; font-weight: 500; margin-bottom: 2rem; display: block; }
+  .zb-item { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+  .zb-item:last-child { border-bottom: none; }
+  .zb-day { font-size: .85rem; color: rgba(255,255,255,.5); font-weight: 300; }
+  .zb-time { font-size: .85rem; color: #fff; font-weight: 500; }
+
+  .contact { padding: 7rem 5rem; background: var(--paper); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .contact-detail { display: flex; gap: .8rem; align-items: flex-start; margin-bottom: 1rem; }
+  .contact-detail svg { flex-shrink: 0; margin-top: 2px; }
+  .cd-label { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 500; display: block; margin-bottom: .2rem; }
+  .cd-val { font-size: .93rem; color: var(--dark); line-height: 1.55; }
+  .cd-val a { color: var(--dark); text-decoration: none; -webkit-text-decoration: none; }
+  .cd-val a:hover { color: var(--gold); }
+  .sf-label { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: .4rem; }
+  .sf-input { width: 100%; padding: .75rem 1rem; border: 1.5px solid rgba(0,0,0,.12); background: #fff; color: var(--dark); font-family: 'DM Sans', sans-serif; font-size: .9rem; outline: none; transition: border-color .2s; border-radius: 0; }
+  .sf-input:focus { border-color: var(--gold); }
+  textarea.sf-input { resize: vertical; }
+
+  footer { background: var(--darker); padding: 2.5rem 5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(255,255,255,.06); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: #fff; }
+  .footer-logo span { color: #90c8ff; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.3); text-decoration: none; transition: color .2s; position: relative; }
+  .footer-links a:hover { color: #fff; }
+  .footer-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 1.5px; background: #90c8ff; transform: scaleX(0); transform-origin: center; transition: transform .3s; }
+  .footer-links a:hover::after { transform: scaleX(1); }
+  .footer-copy { font-size: .78rem; color: rgba(255,255,255,.25); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-left > * { opacity: 0; animation: fadeUp .65s forwards; }
+  .hero-left > *:nth-child(1) { animation-delay: .1s; }
+  .hero-left > *:nth-child(2) { animation-delay: .22s; }
+  .hero-left > *:nth-child(3) { animation-delay: .34s; }
+  .hero-left > *:nth-child(4) { animation-delay: .46s; }
+  .hero-left > *:nth-child(5) { animation-delay: .58s; }
+  .hero-left > *:nth-child(6) { animation-delay: .7s; }
+
+  @media (max-width: 1200px) {
+    nav, .banner, .areas, .team, .kanzlei, .contact, footer { padding-left: 2rem; padding-right: 2rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero::after { display: none; }
+    .hero-right { min-height: 340px; }
+    .areas-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .kanzlei { grid-template-columns: 1fr; gap: 3rem; }
+    .contact { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 768px) {
+    .banner { padding: .7rem 1.2rem; flex-direction: column; align-items: flex-start; gap: .5rem; }
+    .banner-right { gap: 1rem; }
+    nav { padding: 0 1.2rem; }
+    .nav-links { display: none; }
+    .hero-left { padding: 2.5rem 1.2rem; }
+    .hero h1 { font-size: 2.6rem; }
+    .areas { padding: 3rem 1.2rem; }
+    .area-card { padding: 1.8rem 1.2rem; }
+    .team { padding: 3rem 1.2rem; }
+    .kanzlei { padding: 3rem 1.2rem; }
+    .zeiten-box { padding: 1.8rem 1.2rem; }
+    .contact { padding: 3rem 1.2rem; }
+    .kontakt-form-grid { grid-template-columns: 1fr !important; }
+    footer { padding: 2rem 1.2rem; flex-direction: column; align-items: flex-start; gap: .8rem; }
+    .footer-links { flex-wrap: wrap; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <div class="banner-left">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Mehringdamm 40, 10961 Berlin-Kreuzberg
+  </div>
+  <div class="banner-right">
+    <a href="tel:+4930693708" class="banner-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13 19.79 19.79 0 0 1 1.57 4.36 2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      030 693 70 86
+    </a>
+    <a href="mailto:info@m40-recht.de" class="banner-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      info@m40-recht.de
+    </a>
+  </div>
+</div>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-main">Schönberg <span>&amp;</span> Zimmer</span>
+    <span class="nav-logo-sub">Fachanwälte für Migrationsrecht und Strafrecht</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#rechtsgebiete">Rechtsgebiete</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#kanzlei">Kanzlei</a></li>
+    <li class="nav-cta"><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Bürogemeinschaft Berlin-Kreuzberg seit 2005</span>
+    </div>
+    <h1>Spezialisiert.<br>Bundesweit.<br><em>Für Sie.</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">Wir sind eine Kreuzberger Bürogemeinschaft mit Schwerpunkten im Migrationsrecht und Strafrecht. Spezialisierte rechtliche Beratung und Vertretung bundesweit.</p>
+    <div class="hero-tags">
+      <span class="tag">Migrationsrecht</span>
+      <span class="tag">Strafrecht</span>
+      <span class="tag">Familienrecht</span>
+      <span class="tag">Bundesweit tätig</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#kontakt" class="btn-primary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'}); return false;">Termin vereinbaren</a>
+      <a href="#rechtsgebiete" class="btn-outline">Rechtsgebiete</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-placeholder">
+      <div class="hero-pattern-overlay"></div>
+      <!--
+        FOTO EINBINDEN:
+        <img src="images/kanzlei.jpg" style="width:100%;height:100%;object-fit:cover;opacity:.5;">
+      -->
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity=".12" style="position:relative;z-index:1;">
+        <circle cx="40" cy="40" r="38" stroke="#90c8ff" stroke-width="1.5"/>
+        <line x1="40" y1="15" x2="40" y2="65" stroke="#90c8ff" stroke-width="2"/>
+        <line x1="18" y1="15" x2="62" y2="15" stroke="#90c8ff" stroke-width="2"/>
+        <line x1="18" y1="15" x2="10" y2="35" stroke="#90c8ff" stroke-width="1.5"/>
+        <line x1="18" y1="15" x2="26" y2="35" stroke="#90c8ff" stroke-width="1.5"/>
+        <path d="M8 35 Q18 42 28 35" stroke="#90c8ff" stroke-width="1.5"/>
+        <line x1="62" y1="15" x2="54" y2="32" stroke="#90c8ff" stroke-width="1.5"/>
+        <line x1="62" y1="15" x2="70" y2="32" stroke="#90c8ff" stroke-width="1.5"/>
+        <path d="M52 32 Q62 39 72 32" stroke="#90c8ff" stroke-width="1.5"/>
+        <line x1="30" y1="65" x2="50" y2="65" stroke="#90c8ff" stroke-width="2"/>
+        <circle cx="40" cy="15" r="3" fill="#90c8ff"/>
+      </svg>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hs-num">2005</span><span class="hs-label">Kanzlei seit</span></div>
+      <div class="hero-stat"><span class="hs-num">2 FA</span><span class="hs-label">Fachanwälte</span></div>
+      <div class="hero-stat"><span class="hs-num">D-weit</span><span class="hs-label">Bundesweit tätig</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="areas" id="rechtsgebiete">
+  <div class="section-header">
+    <div class="s-tag">Tätigkeitsschwerpunkte</div>
+    <h2 class="s-title">Rechtsgebiete</h2>
+    <p class="s-sub">Spezialisierte Beratung ohne den Zusammenhang zwischen den einzelnen Rechtsgebieten aus den Augen zu verlieren.</p>
+  </div>
+  <div class="areas-grid">
+    <div class="area-card">
+      <svg class="ac-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#2e7dd4" stroke-width="1.5"/><path d="M14 20h12M20 14v12" stroke="#2e7dd4" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="ac-title">Migrationsrecht</div>
+      <ul class="ac-list">
+        <li>Aufenthaltsrecht und Aufenthaltstitel</li>
+        <li>Staatsangehörigkeitsrecht und Einbürgerung</li>
+        <li>Asylrecht und Asylverfahren</li>
+        <li>Abschiebeschutz und Duldung</li>
+        <li>Visarecht und Familiennachzug</li>
+      </ul>
+    </div>
+    <div class="area-card">
+      <svg class="ac-icon" viewBox="0 0 40 40" fill="none"><path d="M20 6l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" stroke="#2e7dd4" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 28h20M13 33h14" stroke="#2e7dd4" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="ac-title">Strafrecht</div>
+      <ul class="ac-list">
+        <li>Strafverteidigung in allen Instanzen</li>
+        <li>Vertretung im Ermittlungsverfahren</li>
+        <li>Jugendstrafrecht</li>
+        <li>Opfervertretung und Nebenklage</li>
+        <li>Strafvollstreckungsrecht</li>
+      </ul>
+    </div>
+    <div class="area-card">
+      <svg class="ac-icon" viewBox="0 0 40 40" fill="none"><circle cx="15" cy="12" r="5" stroke="#2e7dd4" stroke-width="1.5"/><circle cx="25" cy="12" r="5" stroke="#2e7dd4" stroke-width="1.5"/><path d="M5 32c0-6 4-10 10-10h10c6 0 10 4 10 10" stroke="#2e7dd4" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="ac-title">Familienrecht</div>
+      <ul class="ac-list">
+        <li>Ehescheidung und Trennung</li>
+        <li>Sorgerecht und Umgangsrecht</li>
+        <li>Unterhalt für Kinder und Ehegatten</li>
+        <li>Zugewinnausgleich</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="section-header">
+    <div class="s-tag" style="color:#90c8ff">Die Anwältinnen und Anwälte</div>
+    <h2 class="s-title s-title-w">Das Team</h2>
+    <p class="s-sub s-sub-w">Zwei Fachanwälte in Bürogemeinschaft, unterstützt von Rechtsanwaltsfachangestellten und studentischen Mitarbeitenden.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-photo-placeholder">
+        <!--
+          FOTO EINBINDEN:
+          <img src="images/schoenberg.jpg" alt="Gilda Schönberg" style="width:100%;aspect-ratio:3/2.8;object-fit:cover;object-position:top;display:block;">
+        -->
+        <svg class="placeholder-icon" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="12" stroke="#90c8ff" stroke-width="1.5"/><path d="M8 54c0-12 10-20 22-20s22 8 22 20" stroke="#90c8ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="photo-hint">Foto einfügen</div>
+      </div>
+      <div class="team-info">
+        <div class="team-name">Gilda Schönberg</div>
+        <div class="team-role">Rechtsanwältin</div>
+        <div class="team-spec">
+          <span>Fachanwältin für Migrationsrecht</span>
+          <span>Fachanwältin für Strafrecht</span>
+          <span>Familienrecht</span>
+        </div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo-placeholder">
+        <svg class="placeholder-icon" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="12" stroke="#90c8ff" stroke-width="1.5"/><path d="M8 54c0-12 10-20 22-20s22 8 22 20" stroke="#90c8ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="photo-hint">Foto einfügen</div>
+      </div>
+      <div class="team-info">
+        <div class="team-name">Christian Zimmer</div>
+        <div class="team-role">Rechtsanwalt</div>
+        <div class="team-spec">
+          <span>Fachanwalt für Migrationsrecht</span>
+          <span>Fachanwalt für Strafrecht</span>
+          <span>Bundesweit tätig</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kanzlei" id="kanzlei">
+  <div>
+    <div class="s-tag">Über die Kanzlei</div>
+    <h2 class="s-title">Bürogemeinschaft seit 2005</h2>
+    <p class="kanzlei-desc">Wir sind eine Kreuzberger Bürogemeinschaft, die 2005 von Rechtsanwältin Gilda Schönberg und Rechtsanwalt Christian Zimmer gegründet wurde. Wir werden unterstützt von der Rechtsanwaltsfachangestellten Christel Born und mehreren studentischen Mitarbeitenden. Zugleich bilden wir regelmäßig Rechtsreferendarinnen und Rechtsreferendare aus.</p>
+    <div class="kanzlei-punkte">
+      <div class="kanzlei-punkt"><div class="k-dot"></div><div class="k-text"><strong>Zwei Fachanwälte für Migrationsrecht und Strafrecht</strong>Spezialisierte Expertise in beiden Kerngebieten durch die jeweilige Fachanwaltschaft.</div></div>
+      <div class="kanzlei-punkt"><div class="k-dot"></div><div class="k-text"><strong>Bundesweit tätig</strong>Vertretung vor Gerichten und Behörden in ganz Deutschland.</div></div>
+      <div class="kanzlei-punkt"><div class="k-dot"></div><div class="k-text"><strong>Ausbildungskanzlei</strong>Regelmäßige Ausbildung von Rechtsreferendarinnen und Rechtsreferendaren.</div></div>
+    </div>
+  </div>
+  <div>
+    <div class="zeiten-box">
+      <span class="zb-label">Büro- und Telefonzeiten</span>
+      <div class="zb-item"><span class="zb-day">Mo, Di, Do</span><span class="zb-time">10:00 bis 13:00 und 15:00 bis 18:00</span></div>
+      <div class="zb-item"><span class="zb-day">Mi, Fr</span><span class="zb-time">10:00 bis 13:00</span></div>
+      <div class="zb-item"><span class="zb-day">Telefonzeiten</span><span class="zb-time">Mo bis Fr 10-13, Mo/Di/Do 16-18</span></div>
+      <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)"><p style="font-size:.82rem;color:rgba(255,255,255,.35);font-weight:300;line-height:1.7;">Bitte sehen Sie davon ab, Fristsachen per E-Mail zu schicken. Durch die Zusendung von Unterlagen wird noch kein Mandatsverhältnis begründet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div>
+    <div class="s-tag">Kanzlei finden</div>
+    <h2 class="s-title">Kontakt und Anfahrt</h2>
+    <div style="margin-top:2.5rem;">
+      <div class="contact-detail">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2e7dd4" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><span class="cd-label">Adresse</span><span class="cd-val">Mehringdamm 40<br>10961 Berlin-Kreuzberg</span></div>
+      </div>
+      <div class="contact-detail">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2e7dd4" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>
+        <div><span class="cd-label">Telefon und Fax</span><span class="cd-val"><a href="tel:+4930693708">Tel: 030 693 70 86</a><br>Fax: 030 693 74 88</span></div>
+      </div>
+      <div class="contact-detail">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2e7dd4" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div><span class="cd-label">E-Mail</span><span class="cd-val"><a href="mailto:info@m40-recht.de">info@m40-recht.de</a></span></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--dark);margin-bottom:1.5rem;">Nachricht senden</div>
+    <form id="kontaktForm" style="display:flex;flex-direction:column;gap:1rem;">
+      <div class="kontakt-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div><label class="sf-label">Vorname</label><input type="text" name="vorname" class="sf-input" placeholder="Max"></div>
+        <div><label class="sf-label">Nachname</label><input type="text" name="nachname" class="sf-input" placeholder="Mustermann"></div>
+      </div>
+      <div><label class="sf-label">E-Mail</label><input type="email" name="email" required class="sf-input" placeholder="max@beispiel.de"></div>
+      <div><label class="sf-label">Telefon</label><input type="tel" name="telefon" class="sf-input" placeholder="030 ..."></div>
+      <div>
+        <label class="sf-label">Rechtsgebiet</label>
+        <select name="gebiet" class="sf-input" style="appearance:none;cursor:pointer;">
+          <option>Bitte wählen ...</option>
+          <option>Migrationsrecht</option>
+          <option>Strafrecht</option>
+          <option>Familienrecht</option>
+          <option>Sonstiges</option>
+        </select>
+      </div>
+      <div><label class="sf-label">Ihr Anliegen</label><textarea name="nachricht" class="sf-input" rows="4" placeholder="Schildern Sie kurz Ihre Situation ..."></textarea></div>
+      <button type="submit" class="btn-primary" style="border:none;cursor:pointer;align-self:flex-start;font-size:.85rem;">Nachricht senden</button>
+      <span id="kontakt-status" style="font-size:.88rem;"></span>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Schönberg <span>&amp;</span> Zimmer</div>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+  <div class="footer-copy">2026 Rechtsanwälte Schönberg und Zimmer, Berlin</div>
+</footer>
+
+<script>
+  document.getElementById('kontaktForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const status = document.getElementById('kontakt-status');
+    status.style.color = 'var(--muted)';
+    status.textContent = 'Wird gesendet ...';
+    try {
+      const res = await fetch('mail.php', { method: 'POST', body: new FormData(this) });
+      if (res.ok) {
+        status.style.color = 'var(--gold)';
+        status.textContent = 'Nachricht gesendet. Wir melden uns bald!';
+        this.reset();
+      } else throw new Error();
+    } catch {
+      status.style.color = 'crimson';
+      status.textContent = 'Fehler. Bitte rufen Sie an: 030 693 70 86';
+    }
+  });
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow = window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,0.3)' : 'none';
+  });
+</script>
+</body>
+</html>
